@@ -83,3 +83,10 @@ header > h1 {
   cursor: pointer;
   background: grey;
 }
+
+#action-message {
+  text-align: center;
+  font-family: Asap, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
