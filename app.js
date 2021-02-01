@@ -10,13 +10,46 @@ const scissors_div = document.getElementById('s');
 
 function getComputerChoice() {
   const choices['r', 'p', 's'];
-  console.log(Math.random());
+  const randomNumber = (Math.floor(Math.random() * 3));
+  return choices[randomNumber]
+}
+
+function win() {
+  userScore ++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+}
+
+function lose() {
+
+}
+
+function draw() {
+
 }
 
 function game(userChoice) {
-  console.log("asdf" + userChoice);
+  const computerChoice = getComputerChoice();
+  switch (userChoice + computerChoice) {
+    case "rs":
+    case "pr":
+    case "sp":
+      win();
+      break;
+    case "rp":
+    case "ps":
+    case "sr":
+      lose();
+      break;
+    case "rr":
+    case "pp":
+    case "ss":
+      draw();
+      break;
+  }
 }
 
+game("v")
 function main() {
   rock_div.addEventListener("click", function() {
     game("r");
@@ -32,5 +65,3 @@ function main() {
 }
 
 main();
-
-video time: 40mins
